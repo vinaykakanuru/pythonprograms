@@ -9,12 +9,12 @@ def sendMail():
     server.starttls()
     server.ehlo()
 
-    server.login('vinay.suchi123@gmail.com','aqihrrnxdweqelko')
+    server.login('XXXXX@gmail.com','password')
     subject = 'Test Mail'
     body = 'Hey Vinay,\n\nThis is test mail.\n\nRegards,\nVinay'
     msg = f"Subject: {subject}\n\n{body}"
 
-    server.sendmail('vinay.suchi123@gmail.com', 'kakanuru.v.k.884@gmail.com', msg)
+    server.sendmail('XXXXXX@gmail.com', 'YYYYYY@gmail.com', msg)
     print("Email Sent")
 
 sendMail()
