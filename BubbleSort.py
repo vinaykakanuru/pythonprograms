@@ -1,7 +1,6 @@
 l = [64, 34, 25, 12, 22, 11, 90]
-sorted_list = sorted(l)
 
-# takes sorted list as input and keeps large number at last pos for each comparison
+# takes list as input and keeps large number at last pos for each comparison
 
 def BinarySort(list):
     for i in range(len(l)-1, 0, -1): # keep large number at last
