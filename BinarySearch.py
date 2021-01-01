@@ -7,7 +7,8 @@ sorted_list = sorted(l)
 # else decrease nth index to mid-1
 # repeat until min_index <= nth index
 
-def BinarySearch(list, val):
+
+def binary_search(list, val):
     idx0 = 0
     idxn = len(list)-1
 
@@ -23,7 +24,8 @@ def BinarySearch(list, val):
     if idxn < idx0:
         return None
 
-print(BinarySearch(sorted_list, 12))
+
+print('Binary Search: ', binary_search(sorted_list, 12))
 
 # BinarySeacrh with Recursion
 def bsearch(list, idx0, idxn, val):
@@ -33,10 +35,11 @@ def bsearch(list, idx0, idxn, val):
         midval = idx0 + ((idxn - idx0) // 2)
 
         if list[midval] > val:
-            return bsearch(list, idx0, midval-1,val)
+            return bsearch(list, idx0, midval-1, val)
         elif list[midval] < val:
             return bsearch(list, midval+1, idxn, val)
         else:
             return 'Found ' + str(val) + ' at POS: ' + str(midval)
 
-print(bsearch(sorted_list, 0, len(sorted_list)-1, 12))
+
+print('Binary Search with recursion: ', bsearch(sorted_list, 0, len(sorted_list)-1, 12))

@@ -5,7 +5,7 @@ l = [64, 34, 25, 12, 22, 11, 90]
 # The below program finds the gap by equating it to half of the length of the list size and then starts sorting all elements in it.
 # Then we keep resetting the gap until the entire list is sorted.
 
-def shellSort(list):
+def shell_sort(list):
     gap = len(list) // 2
     while gap > 0:
         for i in range(gap, len(list)):
@@ -21,4 +21,5 @@ def shellSort(list):
         gap = gap // 2
     return list
 
-print(shellSort(l))
+
+print('Shell Sort: ', shell_sort(l))

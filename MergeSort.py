@@ -2,6 +2,7 @@ l = [64, 34, 25, 12, 22, 11, 90]
 
 # Merge sort first divides the array into equal halves and then combines them in a sorted manner.
 
+
 def merge_sort(unsorted_list):
     if len(unsorted_list) <= 1:
         return unsorted_list
@@ -30,4 +31,5 @@ def merge(left_half, right_half):
         res = res + left_half
     return res
 
-print(merge_sort(l))
+
+print('Merge Sort: ', merge_sort(l))

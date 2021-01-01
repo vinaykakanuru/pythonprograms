@@ -4,7 +4,8 @@ l = [64, 34, 25, 12, 22, 11, 90]
 # Every item is checked and if a match is found then that particular item is returned,
 # otherwise the search continues till the end of the data structure.
 
-def LinearSearch(list, val):
+
+def linear_search(list, val):
     search_at = 0
     search_res = False
     # Match the value with each data element
@@ -16,4 +17,5 @@ def LinearSearch(list, val):
             search_at = search_at + 1
     return 'Found ' + str(val) + ' at POS: ' + str(search_at)
 
-print(LinearSearch(l, 34))
+
+print(linear_search(l, 34))

@@ -18,4 +18,4 @@ def insertion_sort(list):
     return list
 
 
-print(insertion_sort(l))
+print('insertion sort: ', insertion_sort(l))

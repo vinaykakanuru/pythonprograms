@@ -3,13 +3,14 @@
 # create google app password instead using gmail password
 import smtplib
 
-def sendMail():
-    server = smtplib.SMTP('smtp.gmail.com',587)
+
+def send_mail():
+    server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
     server.ehlo()
 
-    server.login('XXXXX@gmail.com','password')
+    server.login('XXXXX@gmail.com', 'password')
     subject = 'Test Mail'
     body = 'Hey Vinay,\n\nThis is test mail.\n\nRegards,\nVinay'
     msg = f"Subject: {subject}\n\n{body}"
@@ -17,4 +18,5 @@ def sendMail():
     server.sendmail('XXXXXX@gmail.com', 'YYYYYY@gmail.com', msg)
     print("Email Sent")
 
-sendMail()
+
+send_mail()
