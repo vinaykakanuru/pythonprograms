@@ -13,9 +13,8 @@ def pangrams(sentence):
 
 print(pangrams(sentence))
 
+
 # Another approach
-
-
 def pangram(sentence):
     alphabets = "abcdefghijklmnopqrstuvwxyz"
     for char in alphabets:
