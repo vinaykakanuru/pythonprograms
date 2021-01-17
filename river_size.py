@@ -13,6 +13,13 @@ matrix = [[1, 0, 0, 1, 0],
 # sample_otput = [1, 5, 2, 2, 2]
 
 
+# Explanation: We are going through each element by row and col. If we find 1 then we are marking that index into
+# a set so that we won't count the river part again. And we are finding all of it's neighbours and if any neighbours
+# are also 1 we are marking this index again into the marked set and incrementing the len of river and again
+# finding neighbours for that river part 1. If there is no neighbour present or all neighbours are 0's
+# then we are going to next element in the matrix and checking the index of that element whether it is present in
+# marked set if it is in marked set we go for next element otherwise applying neighbour logic on that element.
+
 def river_sizes(matrix):
     marked = set()
     rivers = []
