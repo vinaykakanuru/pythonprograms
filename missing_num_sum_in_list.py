@@ -26,6 +26,18 @@ print('Sum of missing number(s) in the given sequence {} is - {}'.format(array_1
 
 # ------------------------------------------------------------------------------------------------------
 # ------------------------------------------------------------------------------------------------------
+# To find all the missing numbers in the given array
+
+array = [9, 5, 7, 13]  # sample output [6, 8, 10, 11, 12]
+
+
+def missing_numbers(array):
+    return [i for i in range(min(array), max(array)+1) if i not in array]
+
+
+print('Missing Numbers from {} is - {}'.format(array, missing_numbers(array)))
+# ------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------
 # Applicable to find single misisng element in given sequence of an array.
 
 # input array/list
