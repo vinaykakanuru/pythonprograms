@@ -7,6 +7,11 @@ sorted_list = sorted(l)
 # else decrease nth index to mid-1
 # repeat until min_index <= nth index
 
+# Time and Space complexity
+# The time complexity of the binary search algorithm is O(log n). 
+# The best-case time complexity would be O(1) when the central index would directly match the desired value. 
+# The worst-case scenario could be the values at either extremity of the list or values not in the list.
+
 
 def binary_search(list, val):
     idx0 = 0
@@ -15,7 +20,7 @@ def binary_search(list, val):
     while idx0 <= idxn:
         mid = (idx0 + idxn) // 2
         if list[mid] == val:
-            return 'Found ' + str(val) + ' at POS: ' + str(mid)
+            return f'Found {val} at POS:: {mid}'
         elif val > list[mid]:
             idx0 = mid + 1
         elif val < list[mid]:
@@ -25,7 +30,7 @@ def binary_search(list, val):
         return None
 
 
-print('Binary Search: ', binary_search(sorted_list, 12))
+print('Binary Search:', binary_search(sorted_list, 12))
 
 # BinarySeacrh with Recursion
 def bsearch(list, idx0, idxn, val):
@@ -34,12 +39,12 @@ def bsearch(list, idx0, idxn, val):
     else:
         midval = idx0 + ((idxn - idx0) // 2)
 
-        if list[midval] > val:
-            return bsearch(list, idx0, midval-1, val)
-        elif list[midval] < val:
+        if val > list[midval]:
             return bsearch(list, midval+1, idxn, val)
+        elif val < list[midval]:
+            return bsearch(list, idx0, midval-1, val)
         else:
-            return 'Found ' + str(val) + ' at POS: ' + str(midval)
+            return f'Found {val} at POS:: {midval}'
 
 
-print('Binary Search with recursion: ', bsearch(sorted_list, 0, len(sorted_list)-1, 12))
+print('Binary Search with recursion:', bsearch(sorted_list, 0, len(sorted_list)-1, 12))
