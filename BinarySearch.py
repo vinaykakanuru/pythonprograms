@@ -12,7 +12,7 @@ sorted_list = sorted(l)
 # The best-case time complexity would be O(1) when the central index would directly match the desired value. 
 # The worst-case scenario could be the values at either extremity of the list or values not in the list.
 
-
+# BinarySeacrh with Iteration
 def binary_search(list, val):
     idx0 = 0
     idxn = len(list)-1
@@ -30,7 +30,7 @@ def binary_search(list, val):
         return None
 
 
-print('Binary Search:', binary_search(sorted_list, 12))
+print('Binary Search with Iteration:', binary_search(sorted_list, 12))
 
 # BinarySeacrh with Recursion
 def bsearch(list, idx0, idxn, val):
