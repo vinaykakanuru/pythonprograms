@@ -1,9 +1,14 @@
 l = [64, 34, 25, 12, 22, 11, 90]
 
-# In this type of search, a sequential search is made over all items one by one.
-# Every item is checked and if a match is found then that particular item is returned,
+# It is also called as a sequential search, Seaching the given element iterating thorugh each element in the given list.
+# Every element is checked and if a match is found then that particular item is returned,
 # otherwise the search continues till the end of the data structure.
 
+## Time Complexity
+# It is named as linear because its time complexity is of the order of n, BigO notation is O(n).
+
+## Space Complexity
+# BigO Notation is O(1) because we are perfoming search operation on one element only in each iteration.
 
 def linear_search(list, val):
     search_at = 0
