@@ -1,5 +1,8 @@
 l = [64, 34, 25, 12, 22, 11, 90]
 
+# Bubble Sort is an easy-to-implement, stable sorting algorithm with a time complexity of O(n²) in the average and worst cases 
+# and O(n) in the best case.
+
 # takes list as input and keeps large number at last pos for each comparison
 
 
