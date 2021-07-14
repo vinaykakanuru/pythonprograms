@@ -1,6 +1,8 @@
 l = [64, 34, 25, 12, 22, 11, 90]
 
 # Merge sort first divides the array into equal halves and then combines them in a sorted manner.
+# The time complexity of MergeSort is O(n*Log n) in all the 3 cases (worst, average and best) 
+# as the mergesort always divides the array into two halves and takes linear time to merge two halves.
 
 
 def merge_sort(unsorted_list):
