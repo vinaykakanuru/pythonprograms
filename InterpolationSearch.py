@@ -1,5 +1,9 @@
 l = [2, 6, 11, 19, 27, 31, 45, 121]
 
+## Time Complexity: 
+# O(log2(log2 n)) for the average case, and O(n) for the worst case (when items are distributed exponentially)
+
+## Space Complexity: O(1)
 
 def interpolation_search(values, x):
     idx0 = 0
