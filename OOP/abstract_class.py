@@ -101,17 +101,31 @@ In the below program, we can invoke the methods in abstract classes by using sup
 """
 
 class R(ABC):
+    @abstractmethod
+    def ab_method(self):
+        print("Abstract Method from Abstract Base Class")
+
+    # normal function
     def rk(self):
-        print("Abstract Base Class")
+        print("Normal function/method From Abstract Base Class")
  
 class K(R):
+    def ab_method(self):
+        print("Implemented abstract method from Sub Class")
+
     def rk(self):
-        super().rk()
-        print("subclass ")
+        super().rk() # calling normal method of Abstract class
+        super().ab_method() # calling abstract method of Abstract class
+        print("from subclass")
  
 # Driver code
-r = K()
-r.rk()
+try:
+    r = K()
+    r.rk() # calling normal function from sub class
+    r.ab_method() # calling implemented abstract method from sub class
+except Exception as e:
+    print(e)
+
 print('*********************************************')
 
 
@@ -132,8 +146,7 @@ class child(parent):
   
   
 try:
-    r = parent()
-    print(r.geeks)
+    r = parent() # Can't instantiate abstract class parent with abstract methods geeks
 except Exception as e:
     print(e)
   
@@ -154,6 +167,7 @@ class Animal(ABC):
     @abstractmethod
     def move(self):
         pass
+
 class Human(Animal):
     def move(self):
         print("I can walk and run")
