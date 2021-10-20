@@ -181,3 +181,26 @@ root.delete_node(4)
 print("Delete 4 from BST in-order traversal:: ", root.in_order_traversal())
 print("Delete 4 from BST pre-order traversal:: ", root.pre_order_traversal())
 print("Delete 4 from BST post-order traversal:: ", root.post_order_traversal())
+
+
+### Output:
+#----------
+# Building tree with these elements: ['India', 'Pakistan', 'Germany', 'USA', 'China', 'India', 'UK', 'USA']
+# UK is in the list?  True
+# Sweden is in the list?  False
+# Deleting 'Pakistan' from BST in-order traversal::  ['China', 'Germany', 'India', 'UK', 'USA']
+# Deleting 'Pakistan' from BST pre-order traversal::  ['India', 'Germany', 'China', 'USA', 'UK']
+# Deleting 'Pakistan' from BST post-order traversal::  ['China', 'Germany', 'UK', 'USA', 'India']
+# Building tree with these elements: [17, 4, 1, 20, 9, 23, 18, 34]
+# In-order traversal::  [1, 4, 9, 17, 18, 20, 23, 34]
+# Pre-order traversal::  [17, 4, 1, 9, 20, 18, 23, 34]
+# Post-order traversal::  [1, 9, 4, 18, 34, 23, 20, 17]
+# After Deleting 17 from BST pre-order traversal::  [18, 4, 1, 9, 20, 23, 34]
+# In-order Traversal of BST::  [1, 2, 3, 4, 5]
+# Pre-order Traversal of BST::  [4, 2, 1, 3, 5]
+# Post-order Traversal of BST::  [1, 3, 2, 5, 4]
+# Min of BST::  1
+# Max of BST::  5
+# Delete 4 from BST in-order traversal::  [1, 2, 3, 5]
+# Delete 4 from BST pre-order traversal::  [5, 2, 1, 3]
+# Delete 4 from BST post-order traversal::  [1, 3, 2, 5]
