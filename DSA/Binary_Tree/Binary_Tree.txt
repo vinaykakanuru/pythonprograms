@@ -1,0 +1,1 @@
+Binary tree has atmost 2 child nodes

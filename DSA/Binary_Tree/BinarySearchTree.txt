@@ -1,0 +1,13 @@
+Binary Search Tree is a Binary tree which statisfies the below conditions:
+a) For any given node it has atmost (0/1/2) child nodes
+b) For any given Node Left sub-tree elements are always smaller values
+c) For any given Node Right sub-tree elements are always greater values
+d) In-order traversal of BST will be always a sorted array
+
+If we want to delete an element/node from BST there could be 3 situations:
+a) Deleting node may not have any child nodes (simply delete the node)
+b) Deleting node may have 1 child node (replace the deleted node with its child node irrespective of left/right side)
+c) Deleting node may have 2 child nodes (here we can replace the value in two ways)
+    i) In-order predecessor (Maximum of Left sub-tree of deleted node)
+    ii) In-order Successor (Minimum of Right sub-tree of deleted node)
+
