@@ -1,0 +1,43 @@
+Data Structures are of two types
+a) Linear (Arrays, linked lists, stacks, queues) Data arranged in a squential format (say one level)
+b) Non-Linear (Trees, Graphs) Data arranged in a Heirarchical format (say multiple levels)
+
+Tree grows from Top to Bottom (Edges between two nodes are uni-directional links)
+Every Tree has a root node and some nodes (which contains some information either int, str etc)
+Tree can be defined as a collection of entities (nodes) linked together to simulate a Heirarchy.
+
+Basic Terminology of a Tree:-
+---------------------------
+Root: Top most node (node which doesn't has any parent)
+Nodes: which is going to store information and link to another node
+Parent Node: Immediate predecessor(previous) of a given node
+Child Node: Immediate Successor(next) of a given node
+Leaf Node(external Nodes): Node which doesn't have any child nodes 
+Non-leaf Node(internal Nodes): Node which has atleast one Child
+Path: Sequence of consecutive edges from source node to destination node
+Ancestor: Any predecessor node on the path from root node to given node
+Descendants: Any Successor node on the path from given node to leaf node 
+Sub-Tree: Node in the given with all its descendant nodes
+Sibling: All children nodes of a same parent node
+Degree: Number of children nodes of a given node (Degree of all leaf nodes are zero)
+Degree of a Tree: Maximum degree of any node in the given tree is degree of Tree
+Depth of a Node: Length of the path from root node to given node (Number of edges from root node to given Node)
+(Depth of a parnet node is always zero because there is no distance/length from the same root node)
+
+Height of a Node: Length of the path from given node to the deepest/longest leaf node (Number of edges from the given node to deepest/longest leaf node)
+(Height and Depth of a given node may or may not be same/equal {depends on tree structure})
+
+Height/Depth of a Tree: Height of root Node (length of longest path from root node to leaf node)
+
+Level of a Node: Distance/path from root node to given node
+(Level of a node is always equals to depth of a node)
+(Leval of tree is equals to Height of a Tree) 
+(Level of a Node is not equal to height of a node)
+
+Note: If a tree has "n" nodes then we have "(n-1)" edges
+
+Binary tree means each node must has atmost two children nodes(either zero/one/two not more than two child nodes).
+The memory allocation of a node should be three parts 
+[left link to left side node, Data of node, Right link to right side node]
+if suppose a given node C has only one child D to the right node then memor allocation will be 
+[Null, Data of C node, right link to right node D] (left link will be empty as there is no left child/node available)
