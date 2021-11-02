@@ -40,7 +40,7 @@ def long_sub_str(main_str, k):
                 # reduce the count of char at "i" from helper_dict
                 helper_dict[main_str[i]] -= 1
                 
-                # if char at "i" count becomes zero "0" in helper_dict then remove the key from dict
+                # if count of char at "i" becomes zero "0" in helper_dict then remove the key from dict
                 if helper_dict[main_str[i]] == 0:
                     helper_dict.pop(main_str[i]) # del helper_dict[main_str[i]]
 
