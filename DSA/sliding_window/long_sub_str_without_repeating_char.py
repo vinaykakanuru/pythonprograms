@@ -1,7 +1,8 @@
+# https://www.youtube.com/watch?v=L6cffskouPQ&list=PL_z_8CaSLPWeM8BDJmIYDaoQ5zuwyxnfj&index=11&ab_channel=AdityaVerma
 # Find the longest sub_str form given main_str with no repeating char (without char repetition)
 
-## Input:: main_str = "aabacbebebe" and k(num of unique char) = 3
-## Output:: 7 (len of longest sub_str with provided num of unique chars)
+## Input:: main_str = "pwwkew" and k(cond) = (No repeating char) --> (All unique chars)
+## Output:: 3 (wke is the longest sub_str with all unique chars (no char repetition))
 
 ## Test case 1
 main_str = "aabacbebebe"

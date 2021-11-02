@@ -43,7 +43,8 @@ def largest_sub_array(arr, k):
         elif sums > k:
             while sums > k: # 13 > 12
                 sums = sums - arr[i] # 13 - 1, 12
-                i += 1
+                i += 1 # we need to increment "i" before going for next iteration ("i" item removal from sums)
+                        # or (sums == k) cond check
                 
                 # edge case scenario found for Test case 3
                 if sums == k:
