@@ -1,4 +1,4 @@
-# We consider the given string is beautifu if it shouldn't consists "010" in it
+# We consider the given string is beautiful if it shouldn't consists "010" in it
 # to make the given string of integers beautiful how many "minimial" conversions needed either 0-1 or 1-0 to avoid
 # that there will be no "010" is present in the given string
 
