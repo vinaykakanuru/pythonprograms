@@ -1,8 +1,9 @@
-# We need to check if the given string can be Converted as a Palindrome by changing only one character
+# We need to check if the given string can be Converted as a Palindrome 
+# just by changing one character from the given string
 
 
-s1 = "abccaa"  # can change into palindrome by changing 'a' to 'b'
-s2 = "abbcca"  # can't convert this string to a palindrome by changing a single character
+s1 = "abccaa"  # True [can change into palindrome by changing 'a' to 'b']
+s2 = "abbcca"  # False [can't convert this string to a palindrome by changing a single character]
 s3 = "vinayaniv"  # already a palindrome string should return True
 
 
@@ -17,4 +18,6 @@ def str_to_palindrome(s):
     return True if count <= 1 else False
 
 
-print(str_to_palindrome(s3))
+print(f'Given String {s1} is a palindorme? --> {str_to_palindrome(s1)}')
+print(f'Given String {s2} is a palindorme? --> {str_to_palindrome(s2)}')
+print(f'Given String {s3} is a palindorme? --> {str_to_palindrome(s3)}')
