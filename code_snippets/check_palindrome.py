@@ -1,11 +1,28 @@
-# check the given string is palindrome or whether the given string can be arranged into a palindrome
+# check the given string can be arranged into a palindrome.
 
-# A set of characters can form a palindrome if at most one character occurs odd number of times
-# and all characters occur even number of times.
+## Note: we are not checking is the given string is a palindrome 
+# we are only looking for the chances whether we can arrange the given string into a palindrome.
 
-s1 = "vinayaniv"
-s2 = "aaabbbb"
-s3 = "cdefghmnopqrstuvw"
+## Definition:
+# ------------
+# A set of characters can be arranged as a palindrome 
+# only if at most one character from the given string occurs odd number of times
+# or all characters frm the given string occurs even number of times.
+
+## Example:
+#---------
+## Input:: main_str = "vinayaniv" {v:2, i:2, n:2, a:2, y:1}
+## Output:: Yes can we can arrange the above string as a palindrome it satisfies the definition.
+
+## Input:: main_str = "aabbbb" {a:2, b:2}
+## Output:: Yes can we can arrange the above string as a palindrome as all characters occurs even number of times.
+
+
+s1 = "vinayaniv" # output:: True
+s2 = "aabbbb" # output:: True
+s3 = "cdefghmnopqrstuvw" # output:: False
+s4 = "(())" # True
+s5 = "()((" # False (as two character occurs odd number of times)
 
 
 def check_palindrome(s):
@@ -15,4 +32,8 @@ def check_palindrome(s):
     return True if len([c for c in set(s) if s.count(c) % 2 != 0]) < 2 else False
 
 
-print(check_palindrome(s1))
+print(f'Given String {s1} is a palindorme? --> {check_palindrome(s1)}')
+print(f'Given String {s2} is a palindorme? --> {check_palindrome(s2)}')
+print(f'Given String {s3} is a palindorme? --> {check_palindrome(s3)}')
+print(f'Given String {s4} is a palindorme? --> {check_palindrome(s4)}')
+print(f'Given String {s5} is a palindorme? --> {check_palindrome(s5)}')
