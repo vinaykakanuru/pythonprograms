@@ -32,8 +32,8 @@ def check_palindrome(s):
     return True if len([c for c in set(s) if s.count(c) % 2 != 0]) < 2 else False
 
 
-print(f'Given String {s1} is a palindorme? --> {check_palindrome(s1)}')
-print(f'Given String {s2} is a palindorme? --> {check_palindrome(s2)}')
-print(f'Given String {s3} is a palindorme? --> {check_palindrome(s3)}')
-print(f'Given String {s4} is a palindorme? --> {check_palindrome(s4)}')
-print(f'Given String {s5} is a palindorme? --> {check_palindrome(s5)}')
+print(f'Given String {s1} can become a palindorme? --> {check_palindrome(s1)}')
+print(f'Given String {s2} can become a palindorme? --> {check_palindrome(s2)}')
+print(f'Given String {s3} can become a palindorme? --> {check_palindrome(s3)}')
+print(f'Given String {s4} can become a palindorme? --> {check_palindrome(s4)}')
+print(f'Given String {s5} can become a palindorme? --> {check_palindrome(s5)}')
