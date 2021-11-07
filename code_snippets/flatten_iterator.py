@@ -1,3 +1,21 @@
+# Implement a FlattenIterator that implements hasNext() and next() methods. The object is initialized with a list of iterators. The iterators implement hasNext(), next() already.
+
+# Input: [Iterator([1]), Iterator([2, 3, 4]), Iterator([5, 6])]
+
+# The returned object would be executed in this manner with the labeled expected outputs:
+
+# flatten_iterator.next() -> 1
+# flatten_iterator.next() -> 2
+# flatten_iterator.next() -> 3
+# flatten_iterator.next() -> 4
+# flatten_iterator.hasNext() -> True
+# flatten_iterator.next() -> 5 
+# flatten_iterator.next() -> 6
+# flatten_iterator.hasNext() -> False
+
+# Part 2 (~15min)
+# Implement a peek function on your flattened iterator. 
+
 class Iterator:
     def __init__(self, l):
         self._l = l
