@@ -1,6 +1,7 @@
 If we want to search for an element in a given sorted (either Asc/Desc) array, We need to implement BS
 
-
+{% comment %} https://www.youtube.com/watch?v=4WmTRFZilj8&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=1 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
 # we can calculate {mid = int((start + end) /2)} but the problem comes if array size is huge and
 # index sum of (start + end) may exceed INT capacity. So we can optimize this by converting mid value into
 # mid = int(start + (end-start)/2)
@@ -14,7 +15,11 @@ while(start <= end):
 		end = mid - 1
 	else:
 		start = mid + 1
+##---------------------------------------------------------------------------------------------------
 
+
+{% comment %} https://www.youtube.com/watch?v=4WmTRFZilj8&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=3 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
 ## BS Template for sorted array in desc array
 while(start <= end):
 	mid = int(start + (end-start)/2)
@@ -24,8 +29,11 @@ while(start <= end):
 		start = mid + 1
 	else:
         end = mid - 1
+##---------------------------------------------------------------------------------------------------
 
 
+{% comment %} https://www.youtube.com/watch?v=4WmTRFZilj8&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=4 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
 ## order not known (how to find the given array is sorted in Asc/Desc order)
 # if array size > 1 then compare first two elements
 ## Edge case: if starting elements are of same value then go for higher indexes until you find the comparison of two elements
@@ -33,8 +41,11 @@ if arr[0] < arr[1]:
     hit ascending order BS
 else:
     hit descending order BS
-    
+##---------------------------------------------------------------------------------------------------
 
+
+{% comment %} https://www.youtube.com/watch?v=4WmTRFZilj8&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=5 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
 ## Find first occurence of an elemnet to be searched in sorted array
 # [2,4,10,10,10,18,20] let say we are searching for 10 and arr[mid] = 10 but this might be a possible answer
 # but we need to check in left part of array too to find the first occurence of an element
@@ -49,7 +60,11 @@ while(start <= end):
 	else:
         start = mid + 1
 return res
+##---------------------------------------------------------------------------------------------------
 
+
+{% comment %} https://www.youtube.com/watch?v=4WmTRFZilj8&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=5 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
 ## Find last occurence of an elemnet to be searched in sorted array
 # [2,4,10,10,10,18,20] let say we are searching for 10 and arr[mid] = 10 but this might be a possible answer
 # but we need to check in right part of array too to find the last occurence of an element
@@ -64,8 +79,11 @@ while(start <= end):
 	else:
         start = mid + 1
 return res
+##---------------------------------------------------------------------------------------------------
 
 
+{% comment %} https://www.youtube.com/watch?v=4WmTRFZilj8&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=6 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
 ## Count of an element in a given sorted array
 # [2,4,10,10,10,18,20] if element repeats in Sorted array i.e all occurences of that element sits together
 # If array is not sorted then element might scatter into different indexes/places then we need to travese entire array to find the count
@@ -75,9 +93,70 @@ return res
 first_occurence = find the first occurence of given element from given sorted array
 last_occurence = find the last occurence of given element from given sorted array
 return last_occurence - first_occurence + 1 
+##---------------------------------------------------------------------------------------------------
+
 
 {% comment %} https://www.youtube.com/watch?v=4WmTRFZilj8&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=7 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
 ## Number of times array is rotated
 [2,5,6,8,11,12,15,18] --> no of times Rotated - zero
 [11,12,15,18,2,5,6,8] --> no of times Rotated - four
 So, we can say Number of times array is rotated = Index of the min Number
+
+?? But question is how to find the min number from the rotated sorted array using BS (how to know that 2 is min from the given array)
+** Generic BS steps are find the mid and move either left or right part of the array
+
+## Step1: find the mid and compare is the mid element is the minimum number amongst rotated sorted array
+# how to know that elem is min number 
+    --> if the number is less than the both sides of the elements then we can say that elem is the smallest amongst rotated sorted array
+    Eg: 11 >= 12 <= 15 - False (mid elem is not less than from both side elements)
+        12 >= 15 <= 18 - False (mid elem is not less than from both side elements)
+        15 >= 18 <= 2 - False (mid elem is not less than from both side elements)
+        18 >= 2 <= 5 - True (mid elem is less than from both side elements)
+        2 >= 5 <= 6 - False (mid elem is not less than from both side elements)
+        5 >= 6 <= 8 - False (mid elem is not less than from both side elements)
+        Now we can say that element 2 is smaller number amongst the rotated sorted array.
+ 
+## Step2:find the deciding factor to move either left or right part of the array from mid position.
+    --> we can have only two parts from the mid of the rotated sorted array either sorted part or unsorted part of an array
+    Eg:  [11,12,15,18,2,5,6,8] given rotated sorted array. Mid elem is 18.
+    If we see the elem from start to mid inclusive the first part is sorted and 
+    If we see the array from mid elem inclusive to end of the array it is unsorted.
+    we need to move towards the unsorted half part of the array to find the min amongst the rotated sorted array
+    --> compare start, mid and mid, end to find the unsorted array part 
+
+while (start <= end):
+    n = len(arr)
+    mid = int(start + (end - start)/2)
+
+    ## because we are perfoming calculations on rotated sorted array 
+    # and if we are at last index how can we find next, next elem should be starting of the array
+    # and if we are at first index how can we find prev, prev elem should be last elem of the array
+
+    next = (mid + 1) % n
+    prev = (mid + n - 1) % n
+
+    if arr[mid] <= arr[next] and arr[mid] <= arr[prev]:
+        return mid
+
+    if arr[start] <= arr[mid]:
+        start = mid + 1
+    elif arr[mid] <= arr[end]:
+        end = mid - 1
+##---------------------------------------------------------------------------------------------------
+
+
+{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=8 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
+## Find and element from a rotated sorted array
+# From the above problem statement we know how to find the min number from the rotated sorted array.
+now we do have two parts of rotated sorted array. Both are sorted array parts only.
+[11,12,15,18,2,5,6,8] --> 2 is min number and we can find the index of the min number using above discussed statement
+And If we consider two parts from the minimum index we can have two sorted arrays --> [11,12,15,18], [2,5,6,8]
+now we can apply BS on both normal sorted arrays to find the searchable element.
+
+BS([11,12,15,18], start, index-1) --> return 2 [index of searchable elem (15)]
+BS([2,5,6,8], index, end) --> return -1 [as no elem 15 found]
+
+And if both BS() returns -1 then we can say that element we are looking for is not present in rotated sorted array.
+##---------------------------------------------------------------------------------------------------
