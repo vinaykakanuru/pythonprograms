@@ -1,0 +1,83 @@
+If we want to search for an element in a given sorted (either Asc/Desc) array, We need to implement BS
+
+
+# we can calculate {mid = int((start + end) /2)} but the problem comes if array size is huge and
+# index sum of (start + end) may exceed INT capacity. So we can optimize this by converting mid value into
+# mid = int(start + (end-start)/2)
+
+## Normal BS Template (default we assume array is sorted in asc order)
+while(start <= end):
+	mid = int(start + (end-start)/2)
+	if elem == arr[mid]:
+		return mid
+	elif elem < arr[mid]:
+		end = mid - 1
+	else:
+		start = mid + 1
+
+## BS Template for sorted array in desc array
+while(start <= end):
+	mid = int(start + (end-start)/2)
+	if elem == arr[mid]:
+		return mid
+	elif elem < arr[mid]:
+		start = mid + 1
+	else:
+        end = mid - 1
+
+
+## order not known (how to find the given array is sorted in Asc/Desc order)
+# if array size > 1 then compare first two elements
+## Edge case: if starting elements are of same value then go for higher indexes until you find the comparison of two elements
+if arr[0] < arr[1]:
+    hit ascending order BS
+else:
+    hit descending order BS
+    
+
+## Find first occurence of an elemnet to be searched in sorted array
+# [2,4,10,10,10,18,20] let say we are searching for 10 and arr[mid] = 10 but this might be a possible answer
+# but we need to check in left part of array too to find the first occurence of an element
+res = -1
+while(start <= end):
+	mid = int(start + (end-start)/2)
+	if elem == arr[mid]:
+		res = mid
+        end = mid - 1
+	elif elem < arr[mid]:
+		end = mid - 1
+	else:
+        start = mid + 1
+return res
+
+## Find last occurence of an elemnet to be searched in sorted array
+# [2,4,10,10,10,18,20] let say we are searching for 10 and arr[mid] = 10 but this might be a possible answer
+# but we need to check in right part of array too to find the last occurence of an element
+res = -1
+while(start <= end):
+	mid = int(start + (end-start)/2)
+	if elem == arr[mid]:
+		res = mid
+        start = mid + 1
+	elif elem < arr[mid]:
+		end = mid - 1
+	else:
+        start = mid + 1
+return res
+
+
+## Count of an element in a given sorted array
+# [2,4,10,10,10,18,20] if element repeats in Sorted array i.e all occurences of that element sits together
+# If array is not sorted then element might scatter into different indexes/places then we need to travese entire array to find the count
+# So to find count of an element in sorted array we need to find the length of element sitting all together
+# Simply, find [last_occurence - first_occurence + 1]
+
+first_occurence = find the first occurence of given element from given sorted array
+last_occurence = find the last occurence of given element from given sorted array
+return last_occurence - first_occurence + 1 
+
+{% comment %} https://www.youtube.com/watch?v=4WmTRFZilj8&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=7 {% endcomment %}
+## Number of times array is rotated
+[2,5,6,8,11,12,15,18] --> no of times Rotated - zero
+[11,12,15,18,2,5,6,8] --> no of times Rotated - four
+So, we can say Number of times array is rotated = Index of the min Number
