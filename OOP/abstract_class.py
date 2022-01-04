@@ -41,10 +41,10 @@ class Pentagon(Polygon):
  
 # Driver code
 R = Triangle()
-R.noofsides()
+R.noofsides() # I have 3 sides
  
 R = Pentagon()
-R.noofsides()
+R.noofsides() # I have 5 sides
 print('*********************************************')
 
 
@@ -64,10 +64,10 @@ class Snake(Animal):
 
 # Driver code
 R = Human()
-R.move()
+R.move() # I can walk and run
  
 K = Snake()
-K.move()
+K.move() # I can crawl
 print('*********************************************')
 
 
@@ -88,8 +88,8 @@ class child(parent):
         print("child class")
  
 # Driver code
-print(issubclass(child, parent))
-print(isinstance(child(), parent))
+print(issubclass(child, parent)) # True
+print(isinstance(child(), parent)) # True
 print('*********************************************')
 
 
@@ -114,15 +114,17 @@ class K(R):
         print("Implemented abstract method from Sub Class")
 
     def rk(self):
-        super().rk() # calling normal method of Abstract class
-        super().ab_method() # calling abstract method of Abstract class
+        super().rk() # Normal function/method From Abstract Base Class
+        super().ab_method() # Abstract Method from Abstract Base Class
         print("from subclass")
  
 # Driver code
 try:
     r = K()
-    r.rk() # calling normal function from sub class
-    r.ab_method() # calling implemented abstract method from sub class
+    r.rk() # calling normal function rk() from sub class K
+    
+    # calling overridden abstract method ab_method() from sub class K
+    r.ab_method() # Ouput --> Implemented abstract method from Sub Class
 except Exception as e:
     print(e)
 
@@ -151,7 +153,7 @@ except Exception as e:
     print(e)
   
 r = child()
-print(r.geeks)
+print(r.geeks) # child class
 print('*********************************************')
 
 
@@ -173,6 +175,6 @@ class Human(Animal):
         print("I can walk and run")
 
 try:
-    c = Animal() # Cannot Instantiate the Abstract class
+    c = Animal() # Can't instantiate abstract class Animal with abstract methods move
 except Exception as e:
     print(e)
