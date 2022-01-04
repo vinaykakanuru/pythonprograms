@@ -1,4 +1,5 @@
-## from given window size of sub_arrays find the maximum number from the provided array
+# https://www.youtube.com/watch?v=xFJXtB5vSmM&list=PL_z_8CaSLPWeM8BDJmIYDaoQ5zuwyxnfj&index=6
+## from given window size of all sub_arrays from the provided array find the maximum number
 
 ## Input:: arr = [1, 3, -1, -3, 5, 3, 6, 7] and k = 3
 ## Output:: Array of [len(arr) - k + 1] elements

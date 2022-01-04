@@ -1,3 +1,5 @@
+# https://www.youtube.com/watch?v=TfQPoaRDeMQ&list=PL_z_8CaSLPWeM8BDJmIYDaoQ5zuwyxnfj&index=7
+# https://www.youtube.com/watch?v=TfQPoaRDeMQ&list=PL_z_8CaSLPWeM8BDJmIYDaoQ5zuwyxnfj&index=8
 ## variable window size problem (need to find the window size --> max/min or some other satisifying condition)
 
 # from the given Array find the length of largest sub_array which gives us provided sum (condition)

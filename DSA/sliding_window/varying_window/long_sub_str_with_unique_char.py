@@ -1,28 +1,21 @@
-### Story
-## from the given rack of toys you need to pick toys in a sequential order
-## and you should only pick two types of toys once you reach two types you need to stop picking
+# https://www.youtube.com/watch?v=Lav6St0W_pQ&list=PL_z_8CaSLPWeM8BDJmIYDaoQ5zuwyxnfj&index=10
+# Find the longest sub_str form given main_str with number of unique char provided
 
-# Find the maximum number of toys can you pick from given rack of toys
-
-## Example ['car', 'elephant', 'car', 'dog', 'car', 'dog'] 
-# output: 4 {cars: 2, dogs: 2}
-
-## Input:: main_str = "cecdcd" and k(num of unique char) = 2
-## Output:: 4 (cdcd is the longest sub_str with provided num of unique chars)
-
+## Input:: main_str = "aabacbebebe" and k(num of unique char) = 3
+## Output:: 7 (len of longest sub_str with provided num of unique chars)
 
 ## Test case 1
-main_str = "cecdcd"
-k = 2
-output = 4
-
-## Test case 2 (We have done the same prob in lon_sub_str_with_unique_char.py)
 main_str = "aabacbebebe"
 k = 3
 output = 7
 
+## Test case 2
+main_str = "aaaa"
+k = 1
+output = 4
 
-def pick_toys(main_str, k):
+
+def long_sub_str(main_str, k):
     i, j = 0, 0
     helper_dict = {}
     maxi = 0
@@ -58,4 +51,5 @@ def pick_toys(main_str, k):
     
     return maxi
 
-print(pick_toys(main_str, k))
+
+print(long_sub_str(main_str, k))

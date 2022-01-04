@@ -1,4 +1,4 @@
-# https://www.youtube.com/watch?v=L6cffskouPQ&list=PL_z_8CaSLPWeM8BDJmIYDaoQ5zuwyxnfj&index=11&ab_channel=AdityaVerma
+# https://www.youtube.com/watch?v=L6cffskouPQ&list=PL_z_8CaSLPWeM8BDJmIYDaoQ5zuwyxnfj&index=11
 # Find the longest sub_str form given main_str with no repeating char (without char repetition)
 
 ## Input:: main_str = "pwwkew"  and condition: (No repeating char) --> (All unique chars in a given window)
