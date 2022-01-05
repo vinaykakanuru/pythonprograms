@@ -160,3 +160,59 @@ BS([2,5,6,8], index, end) --> return -1 [as no elem 15 found]
 
 And if both BS() returns -1 then we can say that element we are looking for is not present in rotated sorted array.
 ##---------------------------------------------------------------------------------------------------
+
+
+{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=8 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
+## Searching in a nearly sorted array
+Nearly Sorted array defines as any element of index "i" can be present at any of the indexes ["i-1", "i", "i+1"]
+Eg: [5,10,30,20,40] # 20 is at index 3 and it can be at index (2, 3) (i-1, i). Same way 30 can be at (3)
+
+# So In general BS we look into mid value index to go for futher serach iterations to move either left or right part of array
+# Now in nearly sorted array we need to look into three places (mid-1, mid, mid+1), as element can be at (i-1, i, i+1) index
+
+
+## To look into three place (mid-1, mid, mid+1) we need to be sure we are not going array index out of bound exception
+# so while checking the element at (mid-1) index we need to be sure that (mid-1)>=start
+# so while checking the element at (mid+1) index we need to be sure that (mid+1)<=end so that we won't look out of the array
+# And as usual to move right or left part of the array we need to adjust the start, end values by 2.
+
+while (start <= end):
+    mid = int(start + (end - start)/2)
+    if elem == arr[mid]:
+        return mid
+    elif (mid-1) >= start and elem == arr[mid-1]:
+        retrun mid - 1
+    elif (mid+1) <= end and elem == arr[mid+1]:
+        return mid + 1
+    elif elem < arr[mid]:
+        end = mid - 2
+    else:
+        start = mid + 2
+##---------------------------------------------------------------------------------------------------
+
+
+{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=8 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
+## Find the floor of an element from a sorted array 
+--> Definition: Floor of an element in a given sorted array is either the same element if present in array or 
+                the greatest element smaller than the target element from the sorted array 
+    Eg: arr = [1,2,3,4,8,10,10,12,19] and target = 5. Floor is 4 here from the given sorted array as per above definition
+
+
+res = -1
+while (start <= end):
+    mid = int(start + (end - start)/2) 
+    
+    # as the same element can be its floor value (happens only with integers)
+    # Edge case: what if float values are present in sorted array
+    if elem == arr[mid]: 
+        return mid
+    elif elem < arr[mid]:
+        res = mid
+        start = mid + 1
+    else:
+        end = mid - 1
+return res
+
+##---------------------------------------------------------------------------------------------------
