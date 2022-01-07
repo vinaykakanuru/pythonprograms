@@ -1,5 +1,5 @@
-arr = [1, 2, 3, 4, 4.4, 8, 10, 10, 12, 19] 
-target = 4.6
+arr = [1, 2, 3, 4, 8, 10, 10, 12, 19] 
+target = 5
 
 def floor_bs(arr, target):
     start, end = 0, len(arr) - 1
@@ -12,12 +12,12 @@ def floor_bs(arr, target):
         if target == arr[mid]:
             return mid
 
-        if target < arr[mid]:
+        if arr[mid] < target:
             res = mid
-            end = mid - 1
-
-        if target > arr[mid]:
             start = mid + 1
+
+        if arr[mid] > target:
+            end = mid - 1
 
         print(f"res:: {res}")
     return res

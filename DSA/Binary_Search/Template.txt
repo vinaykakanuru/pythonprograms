@@ -106,7 +106,7 @@ So, we can say Number of times array is rotated = Index of the min Number
 ?? But question is how to find the min number from the rotated sorted array using BS (how to know that 2 is min from the given array)
 ** Generic BS steps are find the mid and move either left or right part of the array
 
-## Step1: find the mid and compare is the mid element is the minimum number amongst rotated sorted array
+## Step1: find the mid and compare if the mid element is the minimum number amongst rotated sorted array
 # how to know that elem is min number 
     --> if the number is less than the both sides of the elements then we can say that elem is the smallest amongst rotated sorted array
     Eg: 11 >= 12 <= 15 - False (mid elem is not less than from both side elements)
@@ -123,10 +123,10 @@ So, we can say Number of times array is rotated = Index of the min Number
     If we see the elem from start to mid inclusive the first part is sorted and 
     If we see the array from mid elem inclusive to end of the array it is unsorted.
     we need to move towards the unsorted half part of the array to find the min amongst the rotated sorted array
-    --> compare start, mid and mid, end to find the unsorted array part 
+    --> compare (start, mid) and (mid, end) to find the unsorted array part 
 
+n = len(arr)
 while (start <= end):
-    n = len(arr)
     mid = int(start + (end - start)/2)
 
     ## because we are perfoming calculations on rotated sorted array 
@@ -162,7 +162,7 @@ And if both BS() returns -1 then we can say that element we are looking for is n
 ##---------------------------------------------------------------------------------------------------
 
 
-{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=8 {% endcomment %}
+{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=9 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
 ## Searching in a nearly sorted array
 Nearly Sorted array defines as any element of index "i" can be present at any of the indexes ["i-1", "i", "i+1"]
@@ -182,7 +182,7 @@ while (start <= end):
     if elem == arr[mid]:
         return mid
     elif (mid-1) >= start and elem == arr[mid-1]:
-        retrun mid - 1
+        return mid - 1
     elif (mid+1) <= end and elem == arr[mid+1]:
         return mid + 1
     elif elem < arr[mid]:
@@ -192,7 +192,7 @@ while (start <= end):
 ##---------------------------------------------------------------------------------------------------
 
 
-{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=8 {% endcomment %}
+{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=10 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
 ## Find the floor of an element from a sorted array 
 --> Definition: Floor of an element in a given sorted array is either the same element if present in array or 
@@ -205,14 +205,23 @@ while (start <= end):
     mid = int(start + (end - start)/2) 
     
     # as the same element can be its floor value (happens only with integers)
-    # Edge case: what if float values are present in sorted array
-    if elem == arr[mid]: 
+    # Edge case: what if float values are present in sorted array..?
+    if arr[mid] == elem: 
         return mid
-    elif elem < arr[mid]:
+
+    if arr[mid] > elem:
         res = mid
-        start = mid + 1
-    else:
         end = mid - 1
+
+    if arr[mid] < elem:
+        start = mid + 1
 return res
+##---------------------------------------------------------------------------------------------------
+
+
+{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=11 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
+## 
+
 
 ##---------------------------------------------------------------------------------------------------
