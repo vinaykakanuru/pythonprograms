@@ -241,3 +241,89 @@ while (start <= end):
         start = mid + 1
 return res
 ##---------------------------------------------------------------------------------------------------
+
+
+{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=12 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
+## Find the Next alphabet from given sorted array of alphabets
+
+res = -1
+while (start <= end):
+    mid = int(start + (end - start)/2) 
+
+    # as we need the next alphabet we need to look further even though elem find at mid value
+    if ord(arr[mid]) == ord(elem): 
+        start = mid + 1
+
+    if ord(arr[mid]) > ord(elem):
+        res = mid
+        end = mid - 1
+
+    if ord(arr[mid]) < ord(elem):
+        start = mid + 1
+return res
+##---------------------------------------------------------------------------------------------------
+
+
+{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=13 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
+## Find the position of an element in an infinite sorted array
+# To apply BS we need to know the range of an array to find the mid value as given array is infinte we don't know the end value
+# So first we need to find the subset of an array (we can get the boundary values) in which our target present.
+## [1,2,3,4,5,6,7,8,9,10,11,12,13,............], target = 7
+--> first we initialize start,end = 0, 1 and we keep on moving the end index until arr[end] > target
+    to find the range of elements where we can find our target  
+
+# Then we apply BS template to serach for the target element
+
+## We are finding the subset boundary values of the given infinite array 
+start, end = 0, 1
+while True:
+    if arr[end] < elem:
+        start = end
+        end = end * 2
+    else:
+        break  
+
+# then we are feeding the arr with bound values to BS template
+BS(arr, target, start, end)
+##---------------------------------------------------------------------------------------------------
+
+
+{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=14 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
+## Find the index of first element from infinite Binary sorted array
+--> Binary means either 0, 1
+arr = [000000000000000....11111111......] --> Binary infinite sorted array looks like this
+# We need to find the first occurence of "1" from the above array
+## Solution will be combine of first_occurence of Binary search and infinite sorted array
+
+# First find the subset and apply first_occurence of BS
+##---------------------------------------------------------------------------------------------------
+
+
+{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=15 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
+## Find the index of an element from sorted array which gives min difference with the given target.
+# Input: arr = [1,3,8,10,12,15], target = 12
+# Output: 4
+
+--> Explanation: arr = [1,3,8,10,12,15], target = 12 
+    abs_difference_list = [11,9,4,2,0,3] 
+    IF we observe the values in abs_difference_list, we can find the min difference val is at the same index 
+    where our key present. If key is not present in the given array
+    arr = [1,3,8,10,15], target = 12
+    abs_difference_list = [11,9,4,2,3], we find the min difference at the neighbors of the target
+
+## How to find the two neighbors of the target..?
+# Simple when we run normal BS template, we may end up with the position of target or we may not
+# After all look ups in while loop if our target is not found in the array we may end up (start, end) values with which while cond fails
+
+# These (start, end) values are the two neighbors of our target after while cond fails while finding the target element
+
+BS(arr, target, start, end)
+If target present in the arr, that is the res of this requirement as it gives abs min difference.
+Else we may end up with neighbors (start, end) of position where actually our target may fits in sorted array.
+Then:
+return index of min abs difference from these two (abs(arr[start] - target), abs(arr[end], target))
+##---------------------------------------------------------------------------------------------------

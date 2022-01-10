@@ -7,7 +7,6 @@ def ceil_bs(arr, target):
     start, end = 0, len(arr) - 1
     res = -1
     
-    res = -1
     while (start <= end):
         mid = int(start + (end - start)/2) 
         print(f"start:: {start}, end:: {end}, mid:: {mid}")
@@ -30,7 +29,7 @@ def ceil_bs(arr, target):
 print(f"Ceil of {target} from given sorted array: ", ceil_bs(arr, target))
 
 # output index of ceil of given target (5)
-print(f"Ceil of {target} from given sorted array: ", ceil_bs(arr, 8.1))
+print(f"Ceil of 8.1 from given sorted array: ", ceil_bs(arr, 8.1))
 
 # output index of ceil of given target (6)
-print(f"Ceil of {target} from given sorted array: ", ceil_bs(arr, 10))
+print(f"Ceil of 10 from given sorted array: ", ceil_bs(arr, 10))

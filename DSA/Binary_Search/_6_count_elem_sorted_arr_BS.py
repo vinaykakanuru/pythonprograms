@@ -1,5 +1,5 @@
 """ Count of an element in a given sorted array """
-from _5_last_occurence_sorted_arr_BS import first_occurence_sorted_arr, last_occurence_sorted_arr
+from _5_first_last_occurence_sorted_arr_BS import first_occurence_sorted_arr, last_occurence_sorted_arr
 
 ## inputs
 arr = [2, 4, 10, 10, 10, 18, 20]

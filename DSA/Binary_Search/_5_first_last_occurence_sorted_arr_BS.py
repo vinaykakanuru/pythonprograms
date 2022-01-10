@@ -5,8 +5,9 @@ arr = [2, 4, 10, 10, 10, 18, 20]
 target = 10
 
 
-def first_occurence_sorted_arr(arr, target):
-    start, end = 0, len(arr) - 1
+def first_occurence_sorted_arr(arr, target, start=None, end=None):
+    start = start if start is not None else 0
+    end = end if end is not None else len(arr) - 1
     res = -1
 
     while(start <= end):
@@ -23,8 +24,9 @@ def first_occurence_sorted_arr(arr, target):
     return res
 
 
-def last_occurence_sorted_arr(arr, target):
-    start, end = 0, len(arr) - 1
+def last_occurence_sorted_arr(arr, target, start=None, end=None):
+    start = start if start is not None else 0
+    end = end if end is not None else len(arr) - 1
     res = -1
 
     while(start <= end):

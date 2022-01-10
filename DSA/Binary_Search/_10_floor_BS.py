@@ -29,7 +29,7 @@ def floor_bs(arr, target):
 print(f"Floor of {target} from given sorted array: ", floor_bs(arr, target))
 
 # output index of floor of given target (3)
-print(f"Floor of {target} from given sorted array: ", floor_bs(arr, 4.5))
+print(f"Floor of 4.5 from given sorted array: ", floor_bs(arr, 4.5))
 
 # output index of ceil of given target (6)
-print(f"Floor of {target} from given sorted array: ", floor_bs(arr, 10))
+print(f"Floor of 4.5 from given sorted array: ", floor_bs(arr, 10))
