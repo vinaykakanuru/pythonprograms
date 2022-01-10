@@ -1,4 +1,6 @@
-arr = [1, 2, 3, 4, 8, 10, 10, 12, 19] 
+""" Find the floor of an element from a sorted array """
+
+arr = [1, 2, 3, 4, 4.6, 10, 10, 12, 19] 
 target = 5
 
 def floor_bs(arr, target):
@@ -9,6 +11,7 @@ def floor_bs(arr, target):
         mid = int(start + (end - start)//2)
         print(f"start:: {start}, end:: {end}, mid:: {mid}")
         
+        # as the same element can be its floor value
         if target == arr[mid]:
             return mid
 
@@ -19,7 +22,14 @@ def floor_bs(arr, target):
         if arr[mid] > target:
             end = mid - 1
 
-        print(f"res:: {res}")
     return res
 
-print(floor_bs(arr, target))
+
+# output index of floor of given target (4)
+print(f"Floor of {target} from given sorted array: ", floor_bs(arr, target))
+
+# output index of floor of given target (3)
+print(f"Floor of {target} from given sorted array: ", floor_bs(arr, 4.5))
+
+# output index of ceil of given target (6)
+print(f"Floor of {target} from given sorted array: ", floor_bs(arr, 10))

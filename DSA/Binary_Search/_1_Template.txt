@@ -204,8 +204,32 @@ res = -1
 while (start <= end):
     mid = int(start + (end - start)/2) 
     
-    # as the same element can be its floor value (happens only with integers)
-    # Edge case: what if float values are present in sorted array..?
+    # as the same element can be its floor value
+    if arr[mid] == elem: 
+        return mid
+
+    if arr[mid] < elem:
+        res = mid
+        start = mid + 1
+
+    if arr[mid] > elem:
+        end = mid - 1
+return res
+##---------------------------------------------------------------------------------------------------
+
+
+{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=11 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
+## Find the Ceil of an element from a sorted array 
+--> Definition: Ceil of an element in a given sorted array is either the same element if present in array or 
+                the lowest element greater than the target element from the sorted array 
+    Eg: arr = [1,2,3,4,8,10,10,12,19] and target = 5. Ceil is 8 here from the given sorted array as per above definition
+
+res = -1
+while (start <= end):
+    mid = int(start + (end - start)/2) 
+    
+    # as the same element can be its Ceil value
     if arr[mid] == elem: 
         return mid
 
@@ -216,12 +240,4 @@ while (start <= end):
     if arr[mid] < elem:
         start = mid + 1
 return res
-##---------------------------------------------------------------------------------------------------
-
-
-{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=11 {% endcomment %}
-##---------------------------------------------------------------------------------------------------
-## 
-
-
 ##---------------------------------------------------------------------------------------------------
