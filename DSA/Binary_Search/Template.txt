@@ -123,7 +123,7 @@ So, we can say Number of times array is rotated = Index of the min Number
     If we see the elem from start to mid inclusive the first part is sorted and 
     If we see the array from mid elem inclusive to end of the array it is unsorted.
     we need to move towards the unsorted half part of the array to find the min amongst the rotated sorted array
-    --> compare (start, mid) and (mid, end) to find the unsorted array part 
+    --> compare (0th index, mid index) and (mid index, end index) to find the unsorted array part 
 
 n = len(arr)
 while (start <= end):
@@ -155,8 +155,8 @@ now we do have two parts of rotated sorted array. Both are sorted array parts on
 And If we consider two parts from the minimum index we can have two sorted arrays --> [11,12,15,18], [2,5,6,8]
 now we can apply BS on both normal sorted arrays to find the searchable element.
 
-BS([11,12,15,18], start, index-1) --> return 2 [index of searchable elem (15)]
-BS([2,5,6,8], index, end) --> return -1 [as no elem 15 found]
+BS([11,12,15,18,2,5,6,8], start, index-1) --> return 2 [index of searchable elem (15)]
+BS([11,12,15,18,2,5,6,8], index, end) --> return -1 [as no elem 15 found from the given (start, end) range]
 
 And if both BS() returns -1 then we can say that element we are looking for is not present in rotated sorted array.
 ##---------------------------------------------------------------------------------------------------

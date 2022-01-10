@@ -1,7 +1,10 @@
 normal_sorted_arr = [2, 5, 6, 8, 11, 12, 15, 18]
-rotated_sorted_arr = [11, 12, 15, 18, 2, 5, 6, 8]
+rotated_sorted_arr = [12, 15, 18, 2, 5, 6, 8, 11]
 
 def num_of_times_rotated(arr):
+    """ Finding the index of a minimun element from rotated sorted array 
+    to find how many times the sorted array is rotated
+    """
     start, end = 0, len(arr) - 1
     n = len(arr)
 
@@ -18,11 +21,15 @@ def num_of_times_rotated(arr):
         if arr[mid] <= arr[next_elem] and arr[mid] <= arr[prev_elem]:
             return mid
 
-        if arr[start] <= arr[mid]:
+        if arr[0] <= arr[mid]:
             start = mid + 1
 
-        if arr[mid] <= arr[end]:
+        if arr[mid] <= arr[-1]:
             end = mid - 1
 
+    return -1
 
-print(num_of_times_rotated(rotated_sorted_arr))
+
+if __name__ == "__main__":
+    ## outputs index of min element from the given rotated sorted array (3)
+    print(num_of_times_rotated(rotated_sorted_arr)) 
