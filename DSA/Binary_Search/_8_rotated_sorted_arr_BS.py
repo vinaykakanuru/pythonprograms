@@ -1,25 +1,11 @@
 """ Find the target element from the rotated sorted array """
 
-from _7_times_array_rotated import num_of_times_rotated
+from _2_BS_default_template import bs_default_template
+from _7_times_array_rotated_BS import num_of_times_rotated
 
 ## input values
 rotated_sorted_arr = [11, 12, 15, 18, 2, 5, 6, 8]
 target = 15
-
-
-def binary_search(arr, target, start, end):
-    """ A normal BS template helps to find the target element in given sorted arr 
-    Returns index of the target if present else -1
-    """
-    while(start <= end):
-        mid = int(start + (end-start)/2)
-        if target == arr[mid]:
-            return mid
-        elif target < arr[mid]:
-            end = mid - 1
-        else:
-            start = mid + 1
-    return -1
 
 
 def rotate_sorted_arr_bs(arr, target):
@@ -39,8 +25,8 @@ def rotate_sorted_arr_bs(arr, target):
     
     ## Apply BS on both sorted arrays 
     ## You can find it in either of the arr or target is not present in the main arr.
-    val1 = binary_search(arr, target, start, min_idx - 1)
-    val2 = binary_search(arr, target, min_idx, end)
+    val1 = bs_default_template(arr, target, start, min_idx - 1)
+    val2 = bs_default_template(arr, target, min_idx, end)
     
     if val1 == -1 and val2 == -1:
         return -1
