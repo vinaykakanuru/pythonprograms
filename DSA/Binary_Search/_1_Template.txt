@@ -1,6 +1,6 @@
 If we want to search for an element in a given sorted (either Asc/Desc) array, We need to implement BS
 
-{% comment %} https://www.youtube.com/watch?v=4WmTRFZilj8&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=1 {% endcomment %}
+{% comment %} https://www.youtube.com/watch?v=j7NodO9HIbk&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=1 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
 # we can calculate {mid = int((start + end) /2)} but the problem comes if array size is huge and
 # index sum of (start + end) may exceed INT capacity. So we can optimize this by converting mid value into
@@ -18,7 +18,7 @@ while(start <= end):
 ##---------------------------------------------------------------------------------------------------
 
 
-{% comment %} https://www.youtube.com/watch?v=4WmTRFZilj8&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=3 {% endcomment %}
+{% comment %} https://www.youtube.com/watch?v=YbkELwnGRdo&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=3 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
 ## BS Template for sorted array in desc array
 while(start <= end):
@@ -32,7 +32,7 @@ while(start <= end):
 ##---------------------------------------------------------------------------------------------------
 
 
-{% comment %} https://www.youtube.com/watch?v=4WmTRFZilj8&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=4 {% endcomment %}
+{% comment %} https://www.youtube.com/watch?v=gY2b-Q6wDEM&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=4 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
 ## order not known (how to find the given array is sorted in Asc/Desc order)
 # if array size > 1 then compare first two elements
@@ -44,7 +44,7 @@ else:
 ##---------------------------------------------------------------------------------------------------
 
 
-{% comment %} https://www.youtube.com/watch?v=4WmTRFZilj8&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=5 {% endcomment %}
+{% comment %} https://www.youtube.com/watch?v=zr_AoTxzn0Y&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=5 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
 ## Find first occurence of an elemnet to be searched in sorted array
 # [2,4,10,10,10,18,20] let say we are searching for 10 and arr[mid] = 10 but this might be a possible answer
@@ -63,7 +63,7 @@ return res
 ##---------------------------------------------------------------------------------------------------
 
 
-{% comment %} https://www.youtube.com/watch?v=4WmTRFZilj8&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=5 {% endcomment %}
+{% comment %} https://www.youtube.com/watch?v=zr_AoTxzn0Y&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=5 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
 ## Find last occurence of an elemnet to be searched in sorted array
 # [2,4,10,10,10,18,20] let say we are searching for 10 and arr[mid] = 10 but this might be a possible answer
@@ -82,7 +82,7 @@ return res
 ##---------------------------------------------------------------------------------------------------
 
 
-{% comment %} https://www.youtube.com/watch?v=4WmTRFZilj8&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=6 {% endcomment %}
+{% comment %} https://www.youtube.com/watch?v=Ru_HhBFV3Xo&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=6 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
 ## Count of an element in a given sorted array
 # [2,4,10,10,10,18,20] if element repeats in Sorted array i.e all occurences of that element sits together
@@ -162,7 +162,7 @@ And if both BS() returns -1 then we can say that element we are looking for is n
 ##---------------------------------------------------------------------------------------------------
 
 
-{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=9 {% endcomment %}
+{% comment %} https://www.youtube.com/watch?v=W3-KgsCVH1U&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=9 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
 ## Searching in a nearly sorted array
 Nearly Sorted array defines as any element of index "i" can be present at any of the indexes ["i-1", "i", "i+1"]
@@ -192,7 +192,7 @@ while (start <= end):
 ##---------------------------------------------------------------------------------------------------
 
 
-{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=10 {% endcomment %}
+{% comment %} https://www.youtube.com/watch?v=5cx0xerA8XY&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=10 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
 ## Find the floor of an element from a sorted array 
 --> Definition: Floor of an element in a given sorted array is either the same element if present in array or 
@@ -218,7 +218,7 @@ return res
 ##---------------------------------------------------------------------------------------------------
 
 
-{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=11 {% endcomment %}
+{% comment %} https://www.youtube.com/watch?v=uiz0IxPCUeU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=11 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
 ## Find the Ceil of an element from a sorted array 
 --> Definition: Ceil of an element in a given sorted array is either the same element if present in array or 
@@ -243,7 +243,7 @@ return res
 ##---------------------------------------------------------------------------------------------------
 
 
-{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=12 {% endcomment %}
+{% comment %} https://www.youtube.com/watch?v=X45c37QMdX0&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=12 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
 ## Find the Next alphabet from given sorted array of alphabets
 
@@ -265,7 +265,7 @@ return res
 ##---------------------------------------------------------------------------------------------------
 
 
-{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=13 {% endcomment %}
+{% comment %} https://www.youtube.com/watch?v=FzvK5uuaki8&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=13 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
 ## Find the position of an element in an infinite sorted array
 # To apply BS we need to know the range of an array to find the mid value as given array is infinte we don't know the end value
@@ -290,7 +290,7 @@ BS(arr, target, start, end)
 ##---------------------------------------------------------------------------------------------------
 
 
-{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=14 {% endcomment %}
+{% comment %} https://www.youtube.com/watch?v=8x6dmO6XW8k&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=14 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
 ## Find the index of first element from infinite Binary sorted array
 --> Binary means either 0, 1
@@ -302,7 +302,7 @@ arr = [000000000000000....11111111......] --> Binary infinite sorted array looks
 ##---------------------------------------------------------------------------------------------------
 
 
-{% comment %} https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=15 {% endcomment %}
+{% comment %} https://www.youtube.com/watch?v=3RhGdmoF_ac&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=15 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
 ## Find the index of an element from sorted array which gives min difference with the given target.
 # Input: arr = [1,3,8,10,12,15], target = 12
@@ -326,4 +326,82 @@ If target present in the arr, that is the res of this requirement as it gives ab
 Else we may end up with neighbors (start, end) of position where actually our target may fits in sorted array.
 Then:
 return index of min abs difference from these two (abs(arr[start] - target), abs(arr[end], target))
+##---------------------------------------------------------------------------------------------------
+
+
+{% comment %} https://www.youtube.com/watch?v=IZP_8-JZqhM&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=16 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
+## Binary Search on answer
+--> We know that we can apply BS on given sorted array to search for the given target
+--> Normal BS template is nothing but we compare target with mid and decide to move either left or right half part of the array
+--> In similar way we need to find the criteria on which we depends on the movement. which half we can look into.
+--> Criteria:   1. If our mid is the target.
+                2. If not decide which half part we need to continue our search
+
+** The best example for this type of concept is "peak element" we can solve this in next step.
+##---------------------------------------------------------------------------------------------------
+
+
+{% comment %} https://www.youtube.com/watch?v=OINnBJTRrMU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=17 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
+## Peak element
+--> Definition: Peak element should be always greater than the neighbor elements.
+                There might be more peak elements in a given unsorted array
+
+arr = [5, 10, 20, 15] --> 20 is the peak element
+
+** start and end elements are always not surrounded between the neighbor elements. 
+    Then we need to compare the (start with next) and (end with prev)
+    (start > next) = True, then we can say that start element is also a peak element
+    (end > prev) = True, then we can say that end element is also a peak element
+Eg: arr = [10, 20, 15, 2, 23, 90, 67] --> (10, 20, 90) all are peak elements then we can return any one
+
+
+while (start <= end):
+    mid = int(start + (end - start)//2)
+
+    # if mid is at start/end pos, don't check for neighbor comparison
+    if (mid > 0 and mid < len(arr) - 1):
+        if (arr[mid] > arr[mid - 1]) and (arr[mid] > arr[mid + 1]):
+            return mid
+        elif arr[mid - 1] > arr[mid]:
+            end = mid + 1
+        elif arr[mid + 1] > arr[mid]:
+            start = mid + 1
+    # handling Edge cases while mid is at either start/end position
+    elif (mid == 0):
+        if arr[0] > arr[1]:
+            return 0
+        else:
+            return 1
+    elif (mid == len(arr) - 1):
+        if arr[len(arr) - 1] > arr[len(arr) - 2]:
+            return len(arr) - 1
+        else:
+            return len(arr) - 2
+
+
+##---------------------------------------------------------------------------------------------------
+
+
+{% comment %} https://www.youtube.com/watch?v=BrrZL1RDMwc&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=18 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
+
+
+{% comment %} https://www.youtube.com/watch?v=IjaP8qt1IYI&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=19 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
+
+
+##---------------------------------------------------------------------------------------------------
+
+
+{% comment %} https://www.youtube.com/watch?v=VS0BcOiKaGI&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=20 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
+
+##---------------------------------------------------------------------------------------------------
+
+
+{% comment %} https://www.youtube.com/watch?v=2JSQIhPcHQg&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=21 {% endcomment %}
+##---------------------------------------------------------------------------------------------------
+
 ##---------------------------------------------------------------------------------------------------
