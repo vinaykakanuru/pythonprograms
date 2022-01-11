@@ -379,14 +379,13 @@ while (start <= end):
             return len(arr) - 1
         else:
             return len(arr) - 2
-
-
 ##---------------------------------------------------------------------------------------------------
 
 
 {% comment %} https://www.youtube.com/watch?v=BrrZL1RDMwc&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=18 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
-
+## Find maximum element from Bitonic array
+--> Definition: 
 
 {% comment %} https://www.youtube.com/watch?v=IjaP8qt1IYI&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=19 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
