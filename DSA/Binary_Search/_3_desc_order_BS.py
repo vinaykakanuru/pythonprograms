@@ -4,8 +4,9 @@
 arr = [20, 17, 15, 14, 13, 12, 10, 9, 8, 4]
 target = 15
 
-def sorted_array_desc(arr, target):
-    start, end = 0, len(arr) - 1
+def sorted_array_desc(arr, target, start = None, end = None):
+    start = start if start is not None else 0
+    end = end if end is not None else len(arr) - 1
 
     while(start <= end):
         mid = int(start + (end-start)//2)

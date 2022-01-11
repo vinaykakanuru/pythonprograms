@@ -398,8 +398,16 @@ while (start <= end):
 
 {% comment %} https://www.youtube.com/watch?v=IjaP8qt1IYI&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=19 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
+## Search an element from Bitonic array
+arr = [1,3,8,12,4,2] --> Bitonic array is nothing but two sorted (asc and desc) arrays
 
+--> Asc array [1, 3, 8] without inclusion of a peak element
+    Desc array [12, 4, 2] with inclusion of a peak element
 
+** Solution:
+    1. Find peak element from given bitonic array
+    2. Get the bounds of two sorted (Asc and Desc) arrays
+    3. Feed both to BS Asc and BS Desc templates  
 ##---------------------------------------------------------------------------------------------------
 
 
