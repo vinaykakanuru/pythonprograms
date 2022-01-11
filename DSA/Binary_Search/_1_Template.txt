@@ -365,7 +365,7 @@ while (start <= end):
         if (arr[mid] > arr[mid - 1]) and (arr[mid] > arr[mid + 1]):
             return mid
         elif arr[mid - 1] > arr[mid]:
-            end = mid + 1
+            end = mid - 1
         elif arr[mid + 1] > arr[mid]:
             start = mid + 1
     # handling Edge cases while mid is at either start/end position
@@ -385,7 +385,16 @@ while (start <= end):
 {% comment %} https://www.youtube.com/watch?v=BrrZL1RDMwc&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=18 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
 ## Find maximum element from Bitonic array
---> Definition: 
+--> Definition: Elements in given array are increases monotonically until peak element after decreases monotonically.
+    Eg: arr = [1,3,8,12,4,2] --> elements increases till 12 and decreases after that.
+
+** Conditions:
+    1. No two elements are same while increasing or decreasing then we can say monotonic increment/decrement happening
+    2. You can always find only one peak element from the given "Bitonic Array"
+
+## Simply apply Peak element solution here to find the maximum element from Bitonic array.
+##---------------------------------------------------------------------------------------------------
+
 
 {% comment %} https://www.youtube.com/watch?v=IjaP8qt1IYI&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=19 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
