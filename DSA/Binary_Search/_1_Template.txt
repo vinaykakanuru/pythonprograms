@@ -443,11 +443,60 @@ while(i>=0 and i < n and j>=0 and j < m):
         i += 1
 
 return -1
-
 ##---------------------------------------------------------------------------------------------------
 
 
 {% comment %} https://www.youtube.com/watch?v=2JSQIhPcHQg&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=21 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
+## Allocate minimum number of pages
+# Let's assume we have an array of elements which denotes the page numbers in each book. Array element is a book and value is number of pages.
+# We need to allocate the given books/elements to the number of students (target)
 
+***** Given Array might be sorted or unsorted we can achieve the solution using BS *****
+
+--> Conditions to Problem statement:
+    1. Every Student atleast get a single book. 
+    2. A complete book is dedicated to a single student. We can't distribute the pages of single book to multiple students
+    3. We only need to distribute the books to the students, "continuously".
+    
+    Eg: arr = [10,20,30,40], target=2 (two students)
+    We cannot give (10,30) or (10, 40) or (20, 40) to a student it says that distribution is discontinuous.
+
+--> Definition: Allocate minimum number of pages means, distribute books to each student in order max of pages read by student is minimum.
+
+    combinations we can distribute the above four books to 2 students bindig to the Problem statement Conditions 
+    Eg: ([10], [20,30,40]) --> S1 reads only 10 pages, S2 reads 90 pages --> max(10, 90) --> 90
+        ([10,20], [30,40]) --> S1 reads only 30 pages, S2 reads 70 pages --> max(30, 70) --> 70
+        ([10,20,30], [40]) --> S1 reads only 60 pages, S2 reads 40 pages --> max(60, 40) --> 60
+
+        Min(90, 70, 60) --> 60. So we need to distribute first 3 books to S1 and last book to S2. 
+
+## BS logic
+start = max(arr)
+end = sum(arr)
+res = -1
+if len(arr) < target:
+    return -1 
+while(start <= end):
+    mid = int(start + (end-high)//2)
+    if is_valid(arr, n, k, mid) == True:
+        res = mid
+        end = mid - 1
+    else:
+        start = mid + 1
+return res
+
+## is_valid(arr, n, k, mx)
+student = 1
+sum_ = 0
+for i in range(n):
+    sum_ = sum_ + arr[i]
+    if sum_ > mx:
+        student += 1
+        sum_ = arr[i]
+    
+    if student > k:
+        return False
+
+return True
 ##---------------------------------------------------------------------------------------------------
