@@ -139,9 +139,9 @@ while (start <= end):
     if arr[mid] <= arr[next] and arr[mid] <= arr[prev]:
         return mid
 
-    if arr[start] <= arr[mid]:
+    if arr[0] <= arr[mid]:
         start = mid + 1
-    elif arr[mid] <= arr[end]:
+    elif arr[mid] <= arr[-1]:
         end = mid - 1
 ##---------------------------------------------------------------------------------------------------
 
