@@ -413,6 +413,36 @@ arr = [1,3,8,12,4,2] --> Bitonic array is nothing but two sorted (asc and desc) 
 
 {% comment %} https://www.youtube.com/watch?v=VS0BcOiKaGI&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2&index=20 {% endcomment %}
 ##---------------------------------------------------------------------------------------------------
+## Search in row-wise and colum-wise 2D sorted array
+
+--> Let's say the given 2D array is sorted with (nXm) dimensions, then to search for the given target 
+    complexity: O(n+m) worst case. 
+    If 2D array is not sorted then worst case scenario of complexity: O(n^2)
+arr =   [[10, 20, 30, 40],
+        [15, 25, 35, 45],
+        [27, 29, 37, 48],
+        [32, 33, 39, 50]]
+
+target = 29
+
+**Solution:
+    1. Start looking from first row, last column (i=0, j=m-1)
+    2. Compare if arr[i][j] == target, then return the position of indexes
+    3. If arr[i][j] > target, then we can ignore the current col and move towards prev col by j-=1
+    4. If arr[i][j] < target, then we can ignore the current row and move towards next row by i+=1
+    5. If there is no target present in the given 2D sorted array we return -1 after completion of while loop.
+    
+
+i, j = 0, m-1
+while(i>=0 and i < n and j>=0 and j < m):
+    if arr[i][j] == elem:
+        return i, j
+    elif arr[i][j] > elem:
+        j -= 1
+    elif arr[i][j] < elem:
+        i += 1
+
+return -1
 
 ##---------------------------------------------------------------------------------------------------
 
