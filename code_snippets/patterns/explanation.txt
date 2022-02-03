@@ -1,0 +1,1 @@
+Note: For all pattern problems think about (ROW X COL) and always we print from left to right
