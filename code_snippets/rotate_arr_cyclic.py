@@ -1,4 +1,7 @@
-""" Need to rotate the given array elements with the given k places for n times """
+""" 
+Need to rotate the given array elements with the given k places for n times 
+and print K elements for each iteration 
+"""
 
 ## input
 arr = [1,2,3,4,5,6]
