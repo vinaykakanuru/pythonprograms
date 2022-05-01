@@ -7,7 +7,7 @@
 # ------------
 # A set of characters can be arranged as a palindrome 
 # only if at most one character from the given string occurs odd number of times
-# or all characters frm the given string occurs even number of times.
+# or all characters from the given string occurs even number of times.
 
 ## Example:
 #---------
@@ -31,9 +31,9 @@ def check_palindrome(s):
     # It should equals 0 or 1 but always less than 2 (check the above palindrome definition)
     return True if len([c for c in set(s) if s.count(c) % 2 != 0]) < 2 else False
 
-
-print(f'Given String {s1} can become a palindorme? --> {check_palindrome(s1)}')
-print(f'Given String {s2} can become a palindorme? --> {check_palindrome(s2)}')
-print(f'Given String {s3} can become a palindorme? --> {check_palindrome(s3)}')
-print(f'Given String {s4} can become a palindorme? --> {check_palindrome(s4)}')
-print(f'Given String {s5} can become a palindorme? --> {check_palindrome(s5)}')
+if __name__ == "__main__":
+    print(f'Given String {s1} can become a palindorme? --> {check_palindrome(s1)}')
+    print(f'Given String {s2} can become a palindorme? --> {check_palindrome(s2)}')
+    print(f'Given String {s3} can become a palindorme? --> {check_palindrome(s3)}')
+    print(f'Given String {s4} can become a palindorme? --> {check_palindrome(s4)}')
+    print(f'Given String {s5} can become a palindorme? --> {check_palindrome(s5)}')
