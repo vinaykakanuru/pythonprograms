@@ -1,6 +1,6 @@
 """ 
-Merge the Sub array elements consists of some intervals (a,b) where a < b always. 
-Output is in any order of sub array elements
+Merge the Sub array elements intervals (a,b) where a < b always which are overlapped with other sub-arrays.
+Output can be in any order of sub array intervals.
 """
 
 ## input 
@@ -8,6 +8,9 @@ arr = [[10, 15], [18, 25], [14, 20], [3, 5], [7, 9]]
 
 ## output
 # [[3, 5], [7, 9], [10, 25]]
+
+## Explanation
+# sub-arrays [10, 15], [18, 25], [14, 20] are overlapping we need to converge the intervals into [10, 25]
 
 
 # Solution:
