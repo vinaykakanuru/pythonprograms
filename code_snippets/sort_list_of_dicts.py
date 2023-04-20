@@ -10,8 +10,12 @@ test = [{'name': 'vinay', 'profession': 'IT', 'date': '2021-01-01', 'age': 25},
             'date': '2020-04-01', 'age': 29},
         {'name': 'Ajay', 'profession': 'Public sector', 'date': '2020-11-05', 'age': 23}, ]
 
-# sort the given list based on keys in the dictionary objects
+# sort the given list based on keys in the dictionary objects using itemgetter
 test.sort(key=itemgetter('name'))
+
+# sort the given list using lambda
+test.sort(key=lambda x:x['name'])
+
 # sort the given list in reverse order based on keys in the dictionary objects
 test.sort(key=itemgetter('name'), reverse=True)
 
