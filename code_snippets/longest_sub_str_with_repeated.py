@@ -11,10 +11,17 @@ Otherwise restart the counter. For every restart of the counter keep the max len
 str = "aaabbbbccccccdddddeeeeeaaaaaaaahhhhh"
 # output: 8 (aaaaaaaa) longest sub str with repeated char 
 
+str = "aaabbbbcccccddddddddddddd"
+# output: 8 (aaaaaaaa) longest sub str with repeated char 
+
 def find_longest_sub_str(str):
     """ Takes string as input and returns an integer """
     if len(str) == 0:
         return "Please provide a valid string with atleast one char"
+    
+    # returning the len(str) if all characters in the string are same.
+    if str.count(str[0]) == len(str):
+        return len(str)
     
     # support variables initializing with value one. 
     # Considering the i/p str is not empty and atleast one char present in it.
@@ -27,6 +34,7 @@ def find_longest_sub_str(str):
             res = max(res, counter)
             counter = 1
     
+    res = max(res, counter) # helps if the last char is the longest substr.
     return res
 
 if __name__ == "__main__":
