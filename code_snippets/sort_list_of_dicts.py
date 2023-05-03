@@ -26,8 +26,13 @@ print(new_test)
 
 # Without using in-built functions
 def sort_list_of_dicts(test_list, key):
-    a = [(i, j[key]) for i, j in enumerate(test_list)]
-    b = sorted([i[1] for i in a])
+    # tuple of (index, value of the chosen key from given dict)
+    a = [(idx, pair[key]) for idx, pair in enumerate(test_list)]
+
+    # sorting the values from the above created list of tuples
+    b = sorted([elem[1] for elem in a])
+
+    
     sorted_index = [j[0] for i in b for j in a if i == j[1]]
     return [test_list[i] for i in sorted_index]
 

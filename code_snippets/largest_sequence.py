@@ -11,7 +11,7 @@ array = [1, 2, 5, 6, 7]  # sample_output [5,7]
 # Sort the given array
 # go with typical for loop and group all elements which doesn't skip any integer in between two elements
 # find the larget group and fetch output as [start, end] of the lagrgest sub_array found
-# ---> with this sorted sequence aprach code runs for O(nlog(n)) times to find the output
+# ---> with this sorted sequence aproach code runs for O(nlog(n)) times to find the output
 
 ## Refined Solution
 # Explanation: If we use Hashtable like dict in order to check/find the element it normally takes O(1)

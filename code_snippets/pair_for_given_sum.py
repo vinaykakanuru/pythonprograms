@@ -4,12 +4,14 @@ target = 17
 
 # sample_output: (8,9)
 
-# arr = [1, 3]
-# target = 4
-# sample_output: (8,9)
-
+arr = [1, 3]
+target = 4
+# sample_output: (1,3)
 
 def pair_with_given_sum(arr, target):
+    if len(arr) < 2:
+        return -1
+    
     arr.sort()
     left, right = 0, len(arr)-1
     while (left <= right):

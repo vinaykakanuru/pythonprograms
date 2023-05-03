@@ -26,13 +26,13 @@ def zip(*iterables):
 
 a = zip([1, 2, 3, ], ('a', 'b', 'c'))
 zipped_data = list(a)
-print(zipped_data)
+print(zipped_data) # [(1, 'a'), (2, 'b'), (3, 'c')]
 
 # in similar way we can un-pack the tuples using zip
 
 a, b = zip(*zipped_data)  # returns tuples
-print(a)
-print(b)
+print(a) # (1,2,3)
+print(b) # ('a', 'b', 'c')
 
 b = [1, 2, 3, 4]
-print(list(zip(b)))  # it returns an iterator of 1-tuples
+print(list(zip(b)))  # it returns an iterator of 1-tuples [(1,), (2,), (3,), (4,)]

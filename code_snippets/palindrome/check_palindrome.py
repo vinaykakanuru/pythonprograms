@@ -7,7 +7,7 @@
 # ------------
 # A set of characters can be arranged as a palindrome 
 # only if at most one character from the given string occurs odd number of times
-# or all characters frm the given string occurs even number of times.
+# or all characters fr0m the given string occurs even number of times.
 
 ## Example:
 #---------

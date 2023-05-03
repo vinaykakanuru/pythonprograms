@@ -40,3 +40,4 @@ def find_longest_sub_str(str):
 if __name__ == "__main__":
     print(find_longest_sub_str(str))
     print(find_longest_sub_str("abccd"))
+    print(find_longest_sub_str("a"))

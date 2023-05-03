@@ -6,8 +6,6 @@ arr = ['abcde', 'bcde', 'cfgh']
 # output should be 'c' because 'c' is the common alphabet present in all elements in the given array
 
 # method 1 using set
-
-
 def gemstones_method_1(arr):
     arr1 = [set(i) for i in arr]
     return set.intersection(*arr1)

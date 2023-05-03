@@ -15,7 +15,7 @@ print(pangrams(sentence))
 
 
 # Another approach
-def pangram(sentence):
+def is_pangram(sentence):
     alphabets = "abcdefghijklmnopqrstuvwxyz"
     for char in alphabets:
         if char not in sentence.lower():
