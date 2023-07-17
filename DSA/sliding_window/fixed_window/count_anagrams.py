@@ -12,7 +12,7 @@
 # Example: anagrams for "aaba" are ["aaab", "baaa", "abaa"]
 
 
-# so for every window we are cheking the anagram conditions if all anagram conditions matches the we increase our counter
+# so for every window we are cheking the anagram conditions if all anagram conditions matches then we increase our counter
 
 ### brute force technique 
 # find all combinations of anagrams (k! factorial) and search each anagram in given main string

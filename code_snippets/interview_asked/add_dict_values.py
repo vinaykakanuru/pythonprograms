@@ -15,4 +15,17 @@ from functools import reduce
 
 print(dict(reduce(add, (map(Counter, [d1, d2])))))
 
+def add_dicts(d1, d2):
+    for key, val in d1.items():
+        if key in d2:
+            d2[key] = d2[key] + val
+        else:
+            d2[key] = val
+        
+    return d2
+
+print(f"merging two dicts using for loop: {add_dicts(d1, d2)}")
+
+
+
 
