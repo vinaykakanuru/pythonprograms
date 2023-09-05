@@ -1,0 +1,42 @@
+# This file is used to build the docker image and push it to AWS ECR and update the lambda function with ECR URI.
+variables:
+  DOCKER_REGISTRY: ECR-URI-without-repository-name
+  AWS_DEFAULT_REGION: us-west-2
+  APP_NAME: ecr-repository-name
+  DOCKER_HOST: tcp://docker:2375
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
+  TAG: "$CI_COMMIT_SHORT_SHA-$CI_PIPELINE_ID"
+  LAMBDA_FUNCTION: lambda-function-name
+
+stages:
+  - build
+
+build1:
+  stage: build
+  image: 
+    name: docker:latest
+  rules:
+    # It helps to run the pipeline only if merge request raised on the branch name. i.e, sync
+    # - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "sync"
+
+    # It helps to run the pipeline only after merge request completed on the branch name
+    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_REF_NAME == "branch_name"'
+  services:
+    - docker:dind
+  before_script:
+    - apk apt-get update
+    - apk add --no-cache python3 py3-pip
+    - python3 -m pip install awscli
+
+  script:
+    - aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin $DOCKER_REGISTRY
+    - echo "AWS | Docker Login Successful"
+    - docker build -t $DOCKER_REGISTRY/$APP_NAME:"$TAG" .
+    - echo "Docker Build Complete. - $TAG and pushing image to ECR"
+    - docker push $DOCKER_REGISTRY/$APP_NAME:"$TAG"
+    - echo "Successfully deployed Docker image to ECR. imageTag= $TAG, imageDigest= $SHA_DIGEST"
+    - aws lambda update-function-code --function-name $LAMBDA_FUNCTION --image-uri $DOCKER_REGISTRY/$APP_NAME:"$TAG"
+
+    # To know the SHA_DIGEST of the image using AWS CLI
+    # aws ecr describe-images --output json --repository-name $APP_NAME --query "sort_by(imageDetails,& imagePushedAt)[-1].imageDigest"
